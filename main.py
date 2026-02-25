@@ -4,19 +4,19 @@ teams = {
     "7_Ruby": "Red Bulldogs",
     "7_Emerald": "Green Hornets",
     "7_Sapphire": "Blue Bears",
-    "7_Diamond": "Yellow Tigers",
+    "7_Topaz": "Yellow Tigers",
     "8_Ruby": "Red Bulldogs",
     "8_Emerald": "Green Hornets",
     "8_Sapphire": "Blue Bears",
-    "8_Diamond": "Yellow Tigers",
+    "8_Topaz": "Yellow Tigers",
     "9_Ruby": "Red Bulldogs",
     "9_Emerald": "Green Hornets",
     "9_Sapphire": "Blue Bears",
-    "9_Diamond": "Yellow Tigers",
+    "9_Topaz": "Yellow Tigers",
     "10_Ruby": "Red Bulldogs",
     "10_Emerald": "Green Hornets",
     "10_Sapphire": "Blue Bears",
-    "10_Diamond": "Yellow Tigers",
+    "10_Topaz": "Yellow Tigers",
 }
 
 players_list = [
@@ -88,5 +88,6 @@ def show_players_list(e):
     document.getElementById('players_output').innerHTML = ''
     players_text = '<br>'.join([f'{i}) {player}' for i, player in enumerate(players_list, 1)])
     document.getElementById('players_output').innerHTML = players_text
+
 
 
