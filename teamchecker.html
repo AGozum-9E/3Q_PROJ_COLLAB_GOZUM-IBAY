@@ -25,38 +25,44 @@
     <h1>Intramurals SY 2025-2026</h1>
 
     <div class="card">
-        <h2>Seatwork 2 Third Quarter</h2>
-        <form>
-            <label>Are you done with the online registration?</label>
-            <div>
-              <input type="radio" id="reg_yes" name="registration" value="Yes"> Yes
-              <input type="radio" id="reg_no" name="registration" value="No"> No
-            </div>
+        <h2>Team Checker</h2>
+<form>
+    <label>Are you done with online registration?</label><br>
+    <select id="requirement1">
+        <option value="">Select</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select><br><br>
 
-            <label>Do you have the medical clearance from the clinic?</label>
-            <div>
-              <input type="radio" id="med_yes" name="medical" value="Yes"> Yes
-              <input type="radio" id="med_no" name="medical" value="No"> No
-            </div>
+    <label>Do you have a medical certificate?</label><br>
+    <select id="requirement2">
+        <option value="">Select</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select><br><br>
 
-            <label>What's your Grade & Section?</label>
-            <select id="grade">
-                <option value="">Select Grade</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
+    <label>Grade:</label><br>
+    <select id="grade">
+        <option value="">Select grade</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select><br><br>
 
-            <select id="section">
-                <option value="">Select Section</option>
-                <option value="Ruby">Ruby</option>
-                <option value="Emerald">Emerald</option>
-                <option value="Sapphire">Sapphire</option>
-                <option value="Diamond">Diamond</option>
-            </select>
+    <label>Section:</label>
+    <select id="section">
+        <option value="">Select section</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Emerald">Emerald</option>
+        <option value="Sapphire">Sapphire</option>
+        <option value="Topaz">Topaz</option>
+    </select>
 
-            <div class="center"><input class="btn" type="button" value="Sign up" py-click="team_checker_form"></div>
+    <div class="center">
+        <input class="btn" type="button" value="Check Team" py-click="team_checker_form">
+    </div>
+
         </form>
         <p id="teamchecker_output" class="muted"></p>
          <div id="footer">
