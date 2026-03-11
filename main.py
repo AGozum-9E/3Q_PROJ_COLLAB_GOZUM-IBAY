@@ -19,7 +19,34 @@ teams = {
     "10_Topaz": "Yellow Tigers",
 }
 
-players_list = [
+def signup_form(e):
+    username = document.getElementById('username').value
+    password = document.getElementById('password').value
+    
+    if not username or not password:
+        document.getElementById('signup_output').innerHTML = 'Please fill in all fields'
+    elif len(password) < 7:
+        document.getElementById('signup_output').innerHTML = 'Password must be at least 7 characters long'
+    else:
+        document.getElementById('signup_output').innerHTML = 'Account created. You may now log in using your credentials.'
+
+def team_checker_form(e):
+    grade = document.getElementById('grade').value
+    section = document.getElementById('section').value
+    requirement1 = document.getElementById('requirement1').value
+    requirement2 = document.getElementById('requirement2').value
+
+    if requirement1 == "no" or requirement2 == "no":
+        document.getElementById('teamchecker_output').innerHTML = "Not eligible. Please complete requirements first"
+    elif grade and section:
+        team_key = f"{grade}_{section}"
+        team_name = teams.get(team_key, "Unknown Team")
+        document.getElementById('teamchecker_output').innerHTML = f"Congratulations! You are part of the {team_name}"
+    else:
+        document.getElementById('teamchecker_output').innerHTML = "Please select your grade and section"
+
+
+names = [
     "Abayon",
     "Antes",
     "Apostol",
@@ -47,47 +74,11 @@ players_list = [
     "Zaragoza"
 ]
 
-def hide_all_sections():
-    document.getElementById('signup_section').style.display = 'none'
-    document.getElementById('teamchecker_section').style.display = 'none'
-    document.getElementById('players_section').style.display = 'none'
+output = ""
+for name in names:
+    output += f"{name}<br>"
+    document.getElementById("name_list").innerHTML = output
 
-def show_signup(e):
-    hide_all_sections()
-    document.getElementById('signup_section').style.display = 'block'
-
-def show_teamchecker(e):
-    hide_all_sections()
-    document.getElementById('teamchecker_section').style.display = 'block'
-
-def show_players(e):
-    hide_all_sections()
-    document.getElementById('players_section').style.display = 'block'
-
-def signup_form(e):
-    username = document.getElementById('username').value
-    password = document.getElementById('password').value
-    
-    if username and password:
-        document.getElementById('signup_output').innerHTML = 'Account created. You may now log in using your credentials.'
-    else:
-        document.getElementById('signup_output').innerHTML = 'Please fill in all fields'
-
-def team_checker_form(e):
-    grade = document.getElementById('grade').value
-    section = document.getElementById('section').value
-    
-    if grade and section:
-        team_key = f"{grade}_{section}"
-        team_name = teams.get(team_key, "Unknown Team")
-        document.getElementById('teamchecker_output').innerHTML = f'Congratulations! You are part of the {team_name}'
-    else:
-        document.getElementById('teamchecker_output').innerHTML = 'Please select your grade and section'
-
-def show_players_list(e):
-    document.getElementById('players_output').innerHTML = ''
-    players_text = '<br>'.join([f'{i}) {player}' for i, player in enumerate(players_list, 1)])
-    document.getElementById('players_output').innerHTML = players_text
 
 
 
